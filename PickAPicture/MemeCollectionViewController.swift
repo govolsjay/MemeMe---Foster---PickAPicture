@@ -51,6 +51,17 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDelegate, 
         return cell
     }
 
+    
+    //this code establishes what values will be carried over to the detail page once a cell is touched
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+   
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailViewController")! as DetailViewController
+        //detailController.Label1 = self.arrayOfMemes[indexPath.row].top1
+        //detailController.Label2 = self.arrayOfMemes[indexPath.row].bottom1
+        detailController.Image1 = self.arrayOfMemes[indexPath.row].imageName
+        self.navigationController!.pushViewController(detailController, animated: true)
+    }
+    
 
 
 }

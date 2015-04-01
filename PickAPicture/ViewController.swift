@@ -27,7 +27,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     //text field delegates
     let topDelegate = topTextFieldDelegate()
     let bottomDelegate = bottomTextFieldDelegate()
-  
+    var hasMemeBeenCreated = false
+    
     
     
     
@@ -39,7 +40,15 @@ UINavigationControllerDelegate, UITextFieldDelegate {
             } else {
             actionButton.enabled = true
             }
- 
+        //this code keeps the sentMemes button disabled until a meme has been sent is choosen
+        if hasMemeBeenCreated == false {
+            sentMemesButton.enabled = false
+        } else {
+            sentMemesButton.enabled = true
+        }
+        
+        
+        
         //this helps us move up the screen when the keyboard appears - by subscribing to the notification
         super.viewWillAppear(animated)
         self.subscribeToKeyboardNotifications()
@@ -167,6 +176,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as AppDelegate
         appDelegate.arrayOfMemes.append(meme1)
+        //we now need to turn the variable for has been sent to true, so that the Sent Memes icon will show
+        hasMemeBeenCreated = true
+        sentMemesButton.enabled = true
     }
     
 

@@ -13,11 +13,11 @@ class DetailViewController: UIViewController {
     
     //these are the varibles that align to the three items on the detail viewcontroller
     @IBOutlet weak var DetailImage: UIImageView!
-    @IBOutlet weak var DetailTopText: UILabel!
-    @IBOutlet weak var DetailBottomText: UILabel!
+    //@IBOutlet weak var DetailTopText: UILabel!
+    //@IBOutlet weak var DetailBottomText: UILabel!
     //here we are establishing three varibles that will bring over the information from the table view controller
-    var Label1: String!
-    var Label2: String!
+    //var Label1: String!
+    //var Label2: String!
     var Image1: UIImage!
     
     
@@ -32,8 +32,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DetailTopText.text = Label1
-        DetailBottomText.text = Label2
+        //DetailTopText.text = Label1
+        //DetailBottomText.text = Label2
         DetailImage.image = Image1
     }
 

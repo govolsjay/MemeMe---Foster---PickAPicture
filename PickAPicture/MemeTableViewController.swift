@@ -60,8 +60,8 @@ class MemeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     {
 
         let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailViewController")! as DetailViewController
-        detailController.Label1 = self.arrayOfMemes[indexPath.row].top1
-        detailController.Label2 = self.arrayOfMemes[indexPath.row].bottom1
+        //detailController.Label1 = self.arrayOfMemes[indexPath.row].top1
+        //detailController.Label2 = self.arrayOfMemes[indexPath.row].bottom1
         detailController.Image1 = self.arrayOfMemes[indexPath.row].imageName
         self.navigationController!.pushViewController(detailController, animated: true)
     }
